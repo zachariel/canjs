@@ -195,17 +195,17 @@
       "templates": []
     },
     "dependencies": {
-      "bit-docs-glob-finder": "^0.0.5",
-      "bit-docs-dev": "^0.0.3",
-      "bit-docs-js": "^0.0.6",
+      "bit-docs-glob-finder": "^0.0.6",
+      "bit-docs-dev": "^0.0.4",
+      "bit-docs-js": "^0.0.9",
       "bit-docs-tag-sourceref": "^0.0.3",
       "bit-docs-generate-html": "^0.8.0",
       "bit-docs-generate-searchmap": "^0.2.0",
-      "bit-docs-html-canjs": "^2.0.5",
-      "bit-docs-prettify": "^0.1.1",
-      "bit-docs-html-highlight-line": "^0.2.2",
-      "bit-docs-tag-demo": "^0.3.0",
-      "bit-docs-tag-package": "^0.0.5"
+      "bit-docs-html-canjs": "^2.1.2",
+      "bit-docs-html-highlight-line": "^0.2.3",
+      "bit-docs-prettify": "^0.2.1",
+      "bit-docs-tag-demo": "^0.4.1",
+      "bit-docs-tag-package": "^0.0.6"
     },
     "glob": {
       "pattern": "{node_modules,docs}/{can-*,steal-stache,react-view-model}/**/*.{js,md}",
