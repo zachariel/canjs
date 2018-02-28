@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: docs/can-guides/commitment/recipes/text-editor/text-editor.md
+	@page guides/recipes/text-editor
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CanJS - Text Editor (Medium)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+		<link rel="stylesheet" type="text/css" href="../../static/bundles/bit-docs-site/static.css">
+		<link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/docs/images/canjs_favicon.ico">
+		<link rel="apple-touch-icon" sizes="57x57" href="../../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../../../docs/images/canjs_favicon_57x57.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="../../../docs/images/canjs_favicon_72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="../../../docs/images/canjs_favicon_114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="../../../docs/images/canjs_favicon_128x128.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="../../../docs/images/canjs_favicon_144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="../../../docs/images/canjs_favicon_152x152.png">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+	  	<meta name="apple-mobile-web-app-status-bar-style" content="white-translucent">
+	
+	
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-2302003-11', 'auto');
+			ga('send', 'pageview');
+		</script>
+	
+</head>
+	<body>
+		<input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+		<label for="nav-trigger">Menu</label>
+	  	<div id="everything">
+  <div id="left" class="column">
+    <div class="top-left">
+      
+          <div class="brand">
+	<div class="logo">
+		<a href="../../../index.html" alt="CanJS"></a>
+		<div class="dropdown project-dropdown">
+			<a href="https://donejs.com/">DoneJS</a>
+			<a href="https://stealjs.com/">StealJS</a>
+			<a href="https://jquerypp.com/">jQuery++</a>
+			<a href="https://funcunit.com/">FuncUnit</a>
+			<a href="https://documentjs.com/">DocumentJS</a>
+		</div>
+	</div>
+	<div class="version">
+		<div class="version-number">
+			4.0.1
+		</div>
+		<div class="dropdown version-dropdown">
+			
+				<a href="https://v3.canjs.com">3.12.1</a>
+			
+				<a href="https://v2.canjs.com">2.3.33</a>
+			
+		</div>
+	</div>
+</div>
+<div class="search-bar">
+	<div class="search-wrap" style="display:none;">
+		<span class="search-icon"></span>
+		<input
+			type="text"
+			size="6"
+			class="search"
+			placeholder="Search"
+			autocomplete="off"
+			autocorrect="off"
+			autocapitalize="none"
+			spellcheck="false"/>
+			<span class="search-icon-cancel"></span>
+	</div>
+</div>
+
+
+      
+    </div>
+    <div class="bottom">
+      <div class="nav-menu">
+        <div class="social-side-container">
+          <ul class="social-side">
+  <li>
+    <a class="header-mobile github" href="https://github.com/canjs/canjs" target="_blank"><img class="social-icon-small" src="../../../docs/images/github.png">Github</a>
+  </li>
+  <li>
+    <a class="header-mobile twitter" href="https://twitter.com/canjs" target="_blank"><img class="social-icon-small" src="../../../docs/images/twitter.png">Twitter</a>
+  </li>
+</ul>
+<ul class="social-side">
+  <li>
+    <a class="header-mobile" href="https://gitter.im/canjs/canjs" target="_blank">Chat</a>
+  </li>
+  <li>
+    <a class="header-mobile" href="http://forums.donejs.com/c/canjs" target="_blank">Forum</a>
+  </li>
+</ul>
+
+        </div>
+        
+            
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../about.html"
+							title="Learn about CanJS’s mission, technical highlights, who uses CanJS, and our future roadmap.">
+							About
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						expanded">
+						<a class="page"
+							href="../../guides.html"
+							title="Welcome to CanJS! These guides are here to help you develop and improve your relationship with CanJS. After all, picking a JavaScript framework is a commitment.  We want CanJS to be the framework you marry.  This page helps you know how to advance through the different stages of this relationship:">
+							Guides
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li>
+						<span>experiment</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../chat.html"
+							title="This guide will walk you through building a real-time chat application with CanJS’s Core libraries.  It takes about 30 minutes to complete.">
+							Chat Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../todomvc.html"
+							title="This guide will walk you through building a slightly modified version of TodoMVC with CanJS’s Core libraries and can-fixture. It takes about 1 hour to complete.">
+							TodoMVC Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../atm.html"
+							title="This guide will walk you through building and testing an Automated Teller Machine (ATM) application with CanJS’s
+Core libraries.  You’ll learn how to do test driven development (TDD)
+and manage complex state.  It takes about 2 hours to complete.">
+							ATM Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						parent
+           						expanded">
+						<a class="page"
+							href="../recipes.html"
+							title="A listing of small examples that are useful for learning CanJS.">
+							recipes
+						</a>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="canvas-clock.html"
+							title="This guide walks you through building a canvas clock.">
+							Canvas Clock (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="credit-card-simple.html"
+							title="This guide walks through building a very simple credit card payment form.  It uses Stripe.js v2 API to create a token
+which can be used to create a charge.  It also performs
+simple validation on the payment form values.">
+							Credit Card Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="cta-bus-map.html"
+							title="This guide walks you through showing Chicago Transit Authority (CTA) bus locations on a Google Map.">
+							CTA Bus Map (Medium)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="file-navigator-advanced.html"
+							title="This guide walks you through building a file navigation widget.  It takes about 45 minutes to complete.  It was written with
+CanJS 3.10. Check out the file-navigator-simple
+for an easier example that produces similar functionality.">
+							File Navigator Guide (Advanced)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="file-navigator-simple.html"
+							title="This guide walks you through building a simple file navigation widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 3.10. Check out the file-navigator-advanced
+for an example that makes AJAX requests for its data and uses can-component.">
+							File Navigator Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="signup-simple.html"
+							title="This guide walks through building simple signup, login forms and a logout button.">
+							Signup and Login (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="current
+           						
+           						expanded">
+						<a class="page"
+							href="text-editor.html"
+							title="This guide walks you through building a basic rich text editor.">
+							Text Editor (Medium)
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="todomvc-with-steal.html"
+							title="This guide walks through building TodoMVC with StealJS.">
+							TodoMVC with StealJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="weather-report-simple.html"
+							title="This guide walks you through building a simple weather report widget.  It takes about 25 minutes to complete.  It was written with
+CanJS 3.5.">
+							Weather Report Guide (Simple)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>getting started</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../setup.html"
+							title="Get started with CanJS by installing it with npm, using a JS&amp;nbsp;Bin, or just adding it to an HTML page with a &lt;script&gt; tag.">
+							Setting up CanJS
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../technology-overview.html"
+							title="Learn the basics of the core parts of CanJS&#x27;s technology.">
+							Technology Overview
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../api.html"
+							title="This page walks through how to use and understand CanJS’s API documentation.">
+							Reading the Docs (API Guide)
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>topics</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../debugging.html"
+							title="Learn how to debug CanJS applications.">
+							Debugging Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../forms.html"
+							title="Learn how to create amazing &lt;form&gt;s with CanJS. This guide gives an overview of binding to form element attributes and events, then describes the ins and outs of common elements, and finally discusses a few more advanced topics. We recommend reading the Bindings overview section first before jumping to the topic that interests you &amp;mdash; or start at the top to become an expert on it all.">
+							Forms Guide
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li>
+						<span>upgrade</span>
+						
+	<ul>
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../migrate-3.html"
+							title="This guide walks you through the step-by-step process to upgrade a 2.x app to CanJS 3.">
+							Migrating to CanJS 3
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../migrate-4.html"
+							title="This guide walks you through the step-by-step process to upgrade a 3.x app to CanJS 4.">
+							Migrating to CanJS 4
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../upgrade/using-codemods.html"
+							title="Learn how to migrate your app to CanJS 3 using can-migrate.">
+							Using Codemods
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../api.html"
+							title="Welcome to the CanJS API documentation! Learn about all the packages that make-up CanJS and how they work together to help you build amazing applications.">
+							API Docs
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../../community.html"
+							title="Get involved with one of the most inviting communities on the internet!">
+							Community
+						</a>
+						
+
+					</li>
+				
+			
+		
+			
+				
+					<li class="
+           						
+           						">
+						<a class="page"
+							href="../contribute.html"
+							title="Learn how to contribute to CanJS!">
+							Contributing
+						</a>
+						
+
+					</li>
+				
+			
+		
+	</ul>
+
+
+        
+      </div>
+      <div class="search-results-container">
+	<div class="search-results-wrap"></div>
+</div>
+
+    </div>
+  </div>
+  <div id="right" class="column">
+    <div class="top-right">
+      <div class="top-right-top">
+	<ul class="top-right-bitovi">
+	  	<li class="dropdown">
+	    	<a href="https://www.bitovi.com" class="bitovi icon-bits">Bitovi</a>
+	    	<ul class="dropdown-menu">
+	      		<li><a href="https://www.bitovi.com/">Bitovi.com</a></li>
+	      		<li><a href="https://www.bitovi.com/blog">Blog</a></li>
+	      		<li><a href="https://www.bitovi.com/design">Design</a></li>
+	      		<li><a href="https://www.bitovi.com/development">Development</a></li>
+	      		<li><a href="https://www.bitovi.com/training">Training</a></li>
+	      		<li><a href="https://www.bitovi.com/open-source">Open Source</a></li>
+	      		<li><a href="https://www.bitovi.com/about">About</a></li>
+	      		<li><a href="https://www.bitovi.com/contact">Contact Us</a></li>
+	    	</ul>
+	  	</li>
+	</ul>
+	<div class="brand">
+		<div class="logo">
+			<a href="../../../index.html" alt="CanJS"></a>
+		</div>
+	</div>
+	<ul class="top-right-links">
+  <li>
+    <a href="https://gitter.im/canjs/canjs">Chat</a>
+  </li>
+  <li>
+    <a href="http://forums.donejs.com/c/canjs">Forum</a>
+  </li>
+  <li>
+    <a class="github-button nav-social" href="https://github.com/canjs/canjs" data-count-href="/canjs/canjs/stargazers" data-show-count="true">Star</a>
+  </li>
+  <li>
+    <a href="https://twitter.com/canjs" class="twitter-follow-button nav-social" data-show-count="true" data-show-screen-name="false">Follow @canjs</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </li>
+</ul>
+</div>
+<div class="breadcrumb">
+	
+		<li><a href="../../../index.html">CanJS</a></li>
+		<li> / </li>
+	
+		<li><a href="../../guides.html">Guides</a></li>
+		<li> / </li>
+	
+		<li><a href="../recipes.html">recipes</a></li>
+		<li> / </li>
+	
+	
+	<li><a href="text-editor.html">Text Editor (Medium)</a></li>
+	
+	<li class="breadcrumb-dropdown-separator"> / </li>
+	<li class="breadcrumb-dropdown">
+		<a> On this page</a>
+		<ul class="on-this-page"></ul>
+	</li>
+	<div class="nav-toggle" title="Back to top"></div>
+</div>
+
+
+    </div>
+    <div class="bottom">
+      <article>
+  <section class="title">
+	<div class="page-type">
+		<h1>Text Editor (Medium)</h1>
+			<ul class="title-social">
+				
+				
+				<li>
+					<a class="button-link" href="//github.com/canjs/canjs/edit/master/docs/can-guides/commitment/recipes/text-editor/text-editor.md">Edit on GitHub</a>
+				</li>
+				
+			</ul>
+	</div>
+	<div class="clear-both"></div>
+	
+  
+	<section class="description">
+    <p>This guide walks you through building a basic rich text editor.</p>
+
+</section>
+
+  
+	
+</section>
+<section class="on-this-page-table">
+</section>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <section class="body">
+    <style>
+  video.bit-docs-screenshot {max-width: 600px;}
+</style>
+<p>In this guide you will learn how to:</p>
+<ul>
+<li>Use <code>document.execCommand</code> to change the HTML and copy text to the clickboard.</li>
+<li>The basics of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Range">Range</a> and
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Selection">Selection</a> apis.</li>
+<li>Walk the DOM in unusual ways.</li>
+</ul>
+<p>The final widget looks like:</p>
+<p><a class="jsbin-embed" href="https://jsbin.com/boxibac/6/embed?output&height=400px">JS Bin on jsbin.com</a></p>
+<p>The following sections are broken down the following parts:</p>
+<ul>
+<li><strong>The problem</strong> — A description of what the section is trying to accomplish.</li>
+<li><strong>What you need to know</strong> — Information about CanJS that is useful for solving the problem.</li>
+<li><strong>How to verify it works</strong> - How to make sure the solution works if it's not obvious.</li>
+<li><strong>The solution</strong> — The solution to the problem.</li>
+</ul>
+<h2>Setup</h2>
+<p><strong>START THIS TUTORIAL BY CLONING THE FOLLOWING JS Bin</strong>:</p>
+<blockquote>
+<p>Click the <code>JS Bin</code> button.  The JSBin will open in a new window. In that new window, under <code>File</code>, click <code>Clone</code>.</p>
+</blockquote>
+<p><a class="jsbin-embed" href="https://jsbin.com/qeguhac/3/embed?html,js,output">CanJS Text Editor on jsbin.com</a></p>
+<p>This JS Bin:</p>
+<ul>
+<li>Loads CanJS.</li>
+<li>Implements 3 helper functions we will use later: <code>siblingThenParentUntil</code>, <code>splitRangeStart</code> and <code>splitRangeEnd</code>. These are hidden out of sight in the <code>HTML</code> tab.</li>
+<li>Mocks out the signature for helper functions we will implement later: <code>getElementsInRange</code> and <code>rangeContains</code>. These are in the <code>JavaScript</code> tab.</li>
+</ul>
+<h3>The problem</h3>
+<ul>
+<li>Setup a basic CanJS app by creating a <code>&lt;rich-text-editor&gt;</code> element.</li>
+<li>The <code>&lt;rich-text-editor&gt;</code> element should add a <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content">contenteditable</a> <code>&lt;div/&gt;</code> with an <code>editbox</code>
+<code>className</code> to the page. The <code>&lt;div/&gt;</code> should have the following default <strong>inner</strong> content:
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Learn &lt;b&gt;about&lt;/b&gt; CanJS.&lt;/li&gt;
+    &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+    &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+    &lt;li&gt;Get Funky.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div&gt;Celebrate!&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></li>
+</ul>
+<video controls class="bit-docs-screenshot">
+<source src="../../../docs/can-guides/commitment/recipes/text-editor/1-setup.webm" type="video/webm">
+I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
+</video>
+<h3>What you need to know</h3>
+<p>To setup a basic CanJS application, you define a custom element in JavaScript and
+use the custom element in your page's <code>HTML</code>.</p>
+<p>To define a custom element, extend <a href="../../can-component.html" title="Create a custom element that can be used to manage widgets or application logic.">can-component</a> with a <a href="../../can-component.prototype.tag.html" title="Specifies the HTML tag (or node-name) the can-component will be created on.">tag</a>
+that matches the name of your custom element.  For example:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: 'rich-text-editor'
+})
+</code></pre>
+<p>Then you can use this tag in your HTML page:</p>
+<pre><code class="language-HTML">&lt;rich-text-editor&gt;&lt;/rich-text-editor&gt;
+</code></pre>
+<p>But this doesn't do anything.  Components add their own HTML through their <a href="../../can-component.prototype.view.html" title="Provides a view to render directly within the component’s element. The view is rendered with the
+component’s can-component::ViewModel instance.  &lt;content/&gt; elements within the view are replaced by the source elements within the component’s tag.">view</a>
+property:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: 'rich-text-editor',
+  view: `&lt;h2&gt;I am a rich-text-editor!&lt;/h2&gt;`
+});
+</code></pre>
+<p>Now the <code>H2</code> element in the <code>view</code> will show up within the <code>&lt;rich-text-editor&gt;</code> element.</p>
+<p>To make an element editable, set the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable">contenteditable</a> property to <code>&quot;true&quot;</code>.  Once an element's content is editable, the user can change the text and HTML structure
+of that element by typing and copying and pasting text.</p>
+<h3>The solution</h3>
+<p>Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: 'rich-text-editor',
+  view: `
+    &lt;div class='editbox' contenteditable=&quot;true&quot;&gt;
+      &lt;div&gt;
+        &lt;ol&gt;
+          &lt;li&gt;Learn &lt;b&gt;about&lt;/b&gt; CanJS.&lt;/li&gt;
+          &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+          &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+          &lt;li&gt;Get Funky.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      &lt;div&gt;Celebrate!&lt;/div&gt;
+    &lt;/div&gt;
+  `
+});
+
+function getElementsInRange(range, wrapNodeName) { }
+
+function rangeContains(outer, inner) { }
+
+</code></pre>
+<p><span line-highlight='1-16,only'></span>
+Update the <strong>HTML</strong> <code>&lt;body&gt;</code> element to:</p>
+<pre><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Composer&lt;/h1&gt;
+  &lt;rich-text-editor&gt;&lt;/rich-text-editor&gt;
+
+&lt;script src=&quot;https://unpkg.com/can/dist/global/can.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+// from start, this will try `direction` (nextSibling or previousSibling)
+// and call `callback` with each sibling until there are no more siblings
+// it will then move up the parent.  It will end with the parent's parent is `parent`.
+function siblingThenParentUntil(direction, start, parent, callback){
+  var cur = start;
+  while(cur.parentNode !== parent) {
+    if(cur[direction]) {
+      // move to sibling
+      cur = cur[direction];
+      callback(cur);
+    } else {
+      // move to parent
+      cur = cur.parentNode;
+    }
+  }
+  return cur;
+}
+
+function splitRangeStart(range, wrapNodeName){
+  var startContainer = range.startContainer;
+  var startWrap = document.createElement(wrapNodeName);
+  startWrap.textContent = startContainer.nodeValue.substr(range.startOffset);
+  startContainer.nodeValue = startContainer.nodeValue.substr(0,range.startOffset);
+  startContainer.parentNode.insertBefore(startWrap, startContainer.nextSibling);
+  return startWrap;
+}
+
+function splitRangeEnd(range, wrapNodeName){
+  var endContainer = range.endContainer;
+  var endWrap = document.createElement(wrapNodeName);
+  endWrap.textContent = endContainer.nodeValue.substr(0,range.endOffset);
+  endContainer.nodeValue = endContainer.nodeValue.substr(range.endOffset);
+  endContainer.parentNode.insertBefore(endWrap, endContainer);
+  return endWrap;
+}
+
+&lt;/script&gt;
+&lt;/body&gt;
+
+</code></pre>
+<p><span line-highlight='2-3,only'></span></p>
+<h2>Add a bold button</h2>
+<h3>The problem</h3>
+<ul>
+<li>Add a <code>B</code> <code>&lt;button&gt;</code> that when clicked, will bold the text the user selected.</li>
+<li>The button should have a className of <code>bold</code>.</li>
+<li>The button should be within a <code>&lt;div class='controls'&gt;</code> element before the <code>editbox</code> element.</li>
+</ul>
+<video controls class="bit-docs-screenshot">
+<source src="../../../docs/can-guides/commitment/recipes/text-editor/2-bold.webm" type="video/webm">
+I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
+</video>
+<h3>What you need to know</h3>
+<ul>
+<li><p>Use <a href="../../can-stache-bindings.event.html" title="Respond to events on elements or component ViewModels.">on:event</a> to call a function when an element is clicked:</p>
+<pre><code class="language-js">&lt;button on:click=&quot;doSomething('bold')&quot;&gt;&lt;/button&gt;
+</code></pre></li>
+<li><p>Those functions (example: <code>doSomething</code>) are usually methods on the Component's <a href="../../can-component.prototype.ViewModel.html" title="Provides or describes a constructor function that provides values and methods
+to the component’s view. The constructor function
+is initialized with values specified by the component element’s data bindings.">ViewModel</a>.  For example, the following creates a <code>doSomething</code> method on the ViewModel:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: &quot;some-element&quot;,
+  view: `&lt;button on:click=&quot;doSomething('bold')&quot;&gt;&lt;/button&gt;`,
+  ViewModel: {
+    doSomething(cmd) {
+      alert(&quot;doing &quot;+cmd);
+    }
+  }
+})
+</code></pre></li>
+<li><p>To bold text selected in a <em>contenteditable</em> element, call:</p>
+<pre><code class="language-js">document.execCommand(&quot;bold&quot;, false, false)
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: 'rich-text-editor',
+  view: `
+    &lt;div class='controls'&gt;
+      &lt;button on:click='exec(&quot;bold&quot;)' class='bold'&gt;B&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class='editbox' contenteditable=&quot;true&quot;&gt;
+      &lt;div&gt;
+        &lt;ol&gt;
+          &lt;li&gt;Learn &lt;b&gt;about&lt;/b&gt; CanJS.&lt;/li&gt;
+          &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+          &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+          &lt;li&gt;Get Funky.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      &lt;div&gt;Celebrate!&lt;/div&gt;
+    &lt;/div&gt;
+  `,
+  ViewModel: {
+    exec(cmd){
+      document.execCommand(cmd, false, false);
+    }
+  }
+});
+
+function getElementsInRange(range, wrapNodeName) { }
+
+function rangeContains(outer, inner) { }
+
+</code></pre>
+<p><span line-highlight='4-6,18-23,only'></span></p>
+<h2>Add an italic button</h2>
+<h3>The problem</h3>
+<ul>
+<li>Add a <code>I</code> <code>&lt;button&gt;</code> that when clicked, will italicize the user selected text.</li>
+<li>The button should have a className of <code>italic</code>.</li>
+<li>The button should be within the <code>&lt;div class='controls'&gt;</code> element before the <code>editbox</code> element.</li>
+</ul>
+<h3>What you need to know</h3>
+<p>You know everything you need to know already for this step.  The power was inside you all along!</p>
+<p>Well ... in case you couldn't guess, to italicize text, call:</p>
+<pre><code class="language-js">document.execCommand(&quot;italic&quot;, false, false)
+</code></pre>
+<h3>The solution</h3>
+<p>Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: 'rich-text-editor',
+  view: `
+    &lt;div class='controls'&gt;
+      &lt;button on:click='exec(&quot;bold&quot;)' class='bold'&gt;B&lt;/button&gt;
+      &lt;button on:click='exec(&quot;italic&quot;)' class='italic'&gt;I&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class='editbox' contenteditable=&quot;true&quot;&gt;
+      &lt;div&gt;
+        &lt;ol&gt;
+          &lt;li&gt;Learn &lt;b&gt;about&lt;/b&gt; CanJS.&lt;/li&gt;
+          &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+          &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+          &lt;li&gt;Get Funky.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      &lt;div&gt;Celebrate!&lt;/div&gt;
+    &lt;/div&gt;
+  `,
+  ViewModel: {
+    exec(cmd){
+      document.execCommand(cmd, false, false);
+    }
+  }
+});
+
+function getElementsInRange(range, wrapNodeName) { }
+
+function rangeContains(outer, inner) { }
+
+</code></pre>
+<p><span line-highlight='6,only'></span></p>
+<h2>Add a copy button</h2>
+<h3>The problem</h3>
+<ul>
+<li>Add a <code>Copy All</code> <code>&lt;button&gt;</code> that when clicked, will select the entire contents of
+the <code>editbox</code> element and copy the <code>editbox</code> text to the clipboard.</li>
+<li>The button should be within the <code>&lt;div class='controls'&gt;</code> element before the <code>editbox</code> element.</li>
+</ul>
+<video controls class="bit-docs-screenshot">
+<source src="../../../docs/can-guides/commitment/recipes/text-editor/4-copy.webm" type="video/webm">
+I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
+</video>
+<h3>What you need to know</h3>
+<ul>
+<li><p>To make <code>Copy All</code> work, we need to give the <code>ViewModel</code> access to
+the <code>&lt;rich-text-editor&gt;</code> element.  Usually, <code>ViewModel</code>s should not access DOM elements
+directly. However, for this widget, there's important state (what the user has typed) that
+we need to access.</p>
+<p>So to make the component's <code>element</code> available to the ViewModel, use the following pattern:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: &quot;some-element&quot;,
+  view: `...`,
+  ViewModel: {
+    element: &quot;any&quot;,
+    connectedCallback(el) {
+      this.element = el;
+    }
+  }
+})
+</code></pre>
+<p><code>element: &quot;any&quot;</code> declares the element property can be of any value.</p>
+<p><a href="../../can-component/connectedCallback.html" title="A lifecycle hook called after the component's element is inserted into the document.">connectedCallback</a> is a lifecycle hook that gets called when the component is inserted
+into the page. This pattern saves the <code>element</code> property on the <code>ViewModel</code>.</p>
+<blockquote>
+<p>HINT: This allows you to use <code>this.element</code> within your <code>copyAll()</code> function.</p>
+</blockquote></li>
+<li><p>Use <code>querySelector</code> to get an element by a css selector.</p>
+<pre><code class="language-js">this.element.querySelector(&quot;.someClassName&quot;)
+</code></pre>
+<blockquote>
+<p>HINT: You'll want to get the <code>editbox</code> element.</p>
+</blockquote></li>
+<li><p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Range">Range</a> and
+the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Selection">Selection</a> APIs are used to control
+the text a user is selecting.</p>
+<p><code>Ranges</code> allow you to &quot;contain&quot; a fragment of the document that contain nodes and parts of
+text nodes.</p>
+<p>The <code>Selection</code> object contains the ranges of text that a user currently has highlighted. Usually
+there is only one <code>range</code> within the selection.</p>
+<p>To programmatically select text, first create a range:</p>
+<pre><code class="language-js">var editBoxRange = document.createRange();
+</code></pre>
+<p>Then you position the range over the elements you would like to select.  In our
+case we want to select the <code>editbox</code> element, so we can use <code>.selectNodeContents</code>:</p>
+<pre><code class="language-js">editBoxRange.selectNodeContents(editBox);
+</code></pre>
+<p>Now we need to make the <code>editBoxRange</code> the only range in the user's
+<code>Selection</code>. To do this, we first need to get the selection:</p>
+<pre><code class="language-js">var selection = window.getSelection();
+</code></pre>
+<p>Then, remove all current selected text with:</p>
+<pre><code class="language-js">selection.removeAllRanges();
+</code></pre>
+<p>Finally, add the range you want to actually select:</p>
+<pre><code class="language-js">selection.addRange(editBoxRange);
+</code></pre></li>
+<li><p>To copy to the clipboard the ranges in the user's <code>Selection</code> call:</p>
+<pre><code class="language-js">document.execCommand(&quot;copy&quot;);
+</code></pre></li>
+</ul>
+<h3>How to verify it works</h3>
+<p>Click the <code>Copy All</code> button.  You should be able to paste the contents of the editable area
+into a text editor.</p>
+<h3>The solution</h3>
+<p>Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: 'rich-text-editor',
+  view: `
+    &lt;div class='controls'&gt;
+      &lt;button on:click='exec(&quot;bold&quot;)' class='bold'&gt;B&lt;/button&gt;
+      &lt;button on:click='exec(&quot;italic&quot;)' class='italic'&gt;I&lt;/button&gt;
+      &lt;button on:click='copyAll()'&gt;Copy All&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class='editbox' contenteditable=&quot;true&quot;&gt;
+      &lt;div&gt;
+        &lt;ol&gt;
+          &lt;li&gt;Learn &lt;b&gt;about&lt;/b&gt; CanJS.&lt;/li&gt;
+          &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+          &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+          &lt;li&gt;Get Funky.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      &lt;div&gt;Celebrate!&lt;/div&gt;
+    &lt;/div&gt;
+  `,
+  ViewModel: {
+    exec(cmd){
+      document.execCommand(cmd, false, false);
+    },
+    element: &quot;any&quot;,
+    connectedCallback(el) {
+      this.element = el;
+    },
+    copyAll(){
+      var editBox = this.element.querySelector('.editbox'),
+          editBoxRange = document.createRange();
+      editBoxRange.selectNodeContents(editBox);
+
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(editBoxRange);
+
+      document.execCommand(&quot;copy&quot;);
+    }
+  }
+});
+
+function getElementsInRange(range, wrapNodeName) { }
+
+function rangeContains(outer, inner) { }
+
+</code></pre>
+<p><span line-highlight='7,25-39,only'></span></p>
+<h2>Add a Funky button that works when selecting a single text node</h2>
+<h3>The problem</h3>
+<ul>
+<li>Add a <code>Funky</code> <code>&lt;button&gt;</code> that when clicked, will add <code>funky</code> to the className of the content selected
+in the editable area.</li>
+<li>The button should have a className of <code>bold</code>.</li>
+<li>We are only concerned with <code>Funk-ify</code> text selected within a single element. We will make the <code>Funky</code>
+button able to <code>Funk-ify</code> text selected across elements later.</li>
+</ul>
+<video controls class="bit-docs-screenshot">
+<source src="../../../docs/can-guides/commitment/recipes/text-editor/5-funky-text.webm" type="video/webm">
+I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
+</video>
+<h3>What you need to know</h3>
+<p>On a high level, we are going to:</p>
+<ol>
+<li>Get the text the user has selected represented with a <code>Range</code>.</li>
+<li>Wrap the selected text with a <code>span</code> element element.</li>
+<li>Add <code>funky</code> to the className of the <code>span</code> element.</li>
+</ol>
+<p><strong>Text Nodes Exist!</strong></p>
+<p>It's critical to understand that the DOM is made up of normal nodes and
+text nodes.  For example, the following UL has 7 child nodes:</p>
+<pre><code class="language-js">&lt;ul&gt;
+  &lt;li&gt;First&lt;/li&gt;
+  &lt;li&gt;Second&lt;/li&gt;
+  &lt;li&gt;Third&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>The UL has children like:</p>
+<pre><code class="language-js">[
+   document.createTextNode(&quot;\n  &quot;),
+   &lt;li&gt;First&lt;/li&gt;
+   document.createTextNode(&quot;\n  &quot;)
+   &lt;li&gt;Second&lt;/li&gt;
+   document.createTextNode(&quot;\n  &quot;)
+   &lt;li&gt;Third&lt;/li&gt;
+   document.createTextNode(&quot;\n&quot;)
+]
+</code></pre>
+<p>If the user selects <em>&quot;about selection&quot;</em> in:</p>
+<pre><code>&lt;li&gt;Learn about selection and ranges&lt;/li&gt;
+</code></pre>
+<p>They are selecting part of a TextNode. In order to <code>funk-ify</code>
+<em>&quot;about selection&quot;</em>, we need to change that HTML to:</p>
+<pre><code>&lt;li&gt;Learn &lt;span class='funky'&gt;about selection&lt;/span&gt; and ranges&lt;/li&gt;
+</code></pre>
+<p><strong>Implementing the <code>getElementsInRange</code> helper</strong></p>
+<p>To prepare for the final step, we are going to implement part of this
+step within a <code>getElementsInRange</code> function. <code>getElementsInRange</code>
+returns the HTML elements within a range.  If a range includes
+<code>TextNode</code>s, those <code>TextNode</code>s should be wrapped in a <code>wrapNodeName</code> element.</p>
+<p>For example, if the <code>aboutSelection</code> <code>Range</code> represents <em>&quot;about selection&quot;</em> in:</p>
+<pre><code>&lt;li&gt;Learn about selection and ranges&lt;/li&gt;
+</code></pre>
+<p>calling <code>getElementsInRange(aboutSelection,span)</code> should:</p>
+<ul>
+<li><p>convert the <code>&lt;li&gt;</code> too look like:</p>
+<pre><code>&lt;li&gt;Learn &lt;span&gt;about selection&lt;/span&gt; and ranges&lt;/li&gt;
+</code></pre></li>
+<li><p>return the <code>&lt;span&gt;</code> element above.</p></li>
+</ul>
+<p><strong>Other stuff you need to know</strong></p>
+<ul>
+<li>To get the user's current selection as a <code>Range</code>, run:
+<pre><code class="language-js">var selection = window.getSelection();
+if(selection &amp;&amp; selection.rangeCount) {
+  var selectedRange = selection.getRangeAt(0);
+}
+</code></pre></li>
+<li>To create an element given a tag name, write:
+<pre><code class="language-js">var wrapper = document.createElement(wrapNodeName);
+</code></pre></li>
+<li>To surround a range within a textNode with another node write:
+<pre><code class="language-js">selectedRange.surroundContents(wrapper);
+</code></pre></li>
+<li>To add a class name to an element's class list you can write:
+<pre><code class="language-js">element.classList.add(&quot;funky&quot;)
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: 'rich-text-editor',
+  view: `
+    &lt;div class='controls'&gt;
+      &lt;button on:click='exec(&quot;bold&quot;)' class='bold'&gt;B&lt;/button&gt;
+      &lt;button on:click='exec(&quot;italic&quot;)' class='italic'&gt;I&lt;/button&gt;
+      &lt;button on:click='copyAll()'&gt;Copy All&lt;/button&gt;
+      &lt;button on:click='funky()' class='funky'&gt;Funky&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class='editbox' contenteditable=&quot;true&quot;&gt;
+      &lt;div&gt;
+        &lt;ol&gt;
+          &lt;li&gt;Learn &lt;b&gt;about&lt;/b&gt; CanJS.&lt;/li&gt;
+          &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+          &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+          &lt;li&gt;Get Funky.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      &lt;div&gt;Celebrate!&lt;/div&gt;
+    &lt;/div&gt;
+  `,
+  ViewModel: {
+    exec(cmd){
+      document.execCommand(cmd, false, false);
+    },
+    element: &quot;any&quot;,
+    connectedCallback(el) {
+      this.element = el;
+    },
+    copyAll(){
+      var editBox = this.element.querySelector('.editbox'),
+          editBoxRange = document.createRange();
+      editBoxRange.selectNodeContents(editBox);
+
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(editBoxRange);
+
+      document.execCommand(&quot;copy&quot;);
+    },
+    funky() {
+      var selection = window.getSelection();
+      if(selection &amp;&amp; selection.rangeCount) {
+        var selectedRange = selection.getRangeAt(0);
+        getElementsInRange(selectedRange,&quot;span&quot;).forEach((el) =&gt; {
+          el.classList.add(&quot;funky&quot;)
+        });
+      }
+    }
+  }
+});
+
+function getElementsInRange(range, wrapNodeName) {
+  var elements = [];
+  var wrapper = document.createElement(wrapNodeName);
+  range.surroundContents(wrapper);
+  elements.push(wrapper);
+  return elements;
+}
+
+function rangeContains(outer, inner) { }
+
+</code></pre>
+<p><span line-highlight='8,41-49,53-59,only'></span></p>
+<h2>Make the Funky button only work within the editable area</h2>
+<h3>The problem</h3>
+<p>As shown in the previous step's video, selecting text outside the editable area and
+clicking the <code>Funky</code> button will make that text <code>Funky</code>. In this step, we will
+only <code>funk-ify</code> the text in the <code>editbox</code>.</p>
+<video controls class="bit-docs-screenshot">
+<source src="../../../docs/can-guides/commitment/recipes/text-editor/6-funky-only.webm" type="video/webm">
+I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
+</video>
+<h3>What you need to know</h3>
+<p>On a high level, we are going to:</p>
+<ol>
+<li>Create a range that represents the <code>editbox</code></li>
+<li>Compare the selected range to the <code>editbox</code> range and make sure it's inside
+the <code>editbox</code> before adding the <code>funky</code> behavior.</li>
+</ol>
+<p><strong>The <code>rangeContains</code> helper</strong></p>
+<p>In this step, we will be implementing the <code>rangeContains</code> helper
+function.  Given an <code>outer</code> range and an <code>inner</code> range, it must return <code>true</code>
+if the <code>outer</code> range is equal to or contains the <code>inner</code> range:</p>
+<pre><code class="language-js">function rangeContains(outer, inner) {
+  return // COMPARE RANGES
+}
+
+var documentRange = document.createRange();
+documentRange.selectContents(document.documentElement);
+
+var bodyRange = document.createRange();
+bodyRange.selectContents(document.body)
+
+rangeContains(documentRange, bodyRange) //-&gt; true
+</code></pre>
+<p><strong>Other stuff you need to know</strong></p>
+<ul>
+<li><p>Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Range/selectNodeContents">selectNodeContents</a>
+to set a range to the contents of an element:</p>
+<pre><code class="language-js">var bodyRange = document.createRange();
+bodyRange.selectContents(document.body)
+</code></pre></li>
+<li><p>Use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Range/compareBoundaryPoints">compareBoundaryPoints</a>
+to compare two ranges. The following makes sure <code>outer</code>'s start is before or equal to <code>inner</code>'s start AND
+<code>outer</code>'s end is after or equal to <code>inner</code>'s end:</p>
+<pre><code class="language-js">outer.compareBoundaryPoints(Range.START_TO_START,inner) &lt;= 0 &amp;&amp;
+outer.compareBoundaryPoints(Range.END_TO_END,inner) &gt;= 0
+</code></pre></li>
+</ul>
+<h3>The solution</h3>
+<p>Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: 'rich-text-editor',
+  view: `
+    &lt;div class='controls'&gt;
+      &lt;button on:click='exec(&quot;bold&quot;)' class='bold'&gt;B&lt;/button&gt;
+      &lt;button on:click='exec(&quot;italic&quot;)' class='italic'&gt;I&lt;/button&gt;
+      &lt;button on:click='copyAll()'&gt;Copy All&lt;/button&gt;
+      &lt;button on:click='funky()' class='funky'&gt;Funky&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class='editbox' contenteditable=&quot;true&quot;&gt;
+      &lt;div&gt;
+        &lt;ol&gt;
+          &lt;li&gt;Learn &lt;b&gt;about&lt;/b&gt; CanJS.&lt;/li&gt;
+          &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+          &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+          &lt;li&gt;Get Funky.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      &lt;div&gt;Celebrate!&lt;/div&gt;
+    &lt;/div&gt;
+  `,
+  ViewModel: {
+    exec(cmd){
+      document.execCommand(cmd, false, false);
+    },
+    element: &quot;any&quot;,
+    connectedCallback(el) {
+      this.element = el;
+    },
+    copyAll(){
+      var editBox = this.element.querySelector('.editbox'),
+          editBoxRange = document.createRange();
+      editBoxRange.selectNodeContents(editBox);
+
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(editBoxRange);
+
+      document.execCommand(&quot;copy&quot;);
+    },
+    funky() {
+      var editBox = this.element.querySelector('.editbox'),
+          editBoxRange = document.createRange();
+      editBoxRange.selectNodeContents(editBox);
+
+      var selection = window.getSelection();
+      if(selection &amp;&amp; selection.rangeCount) {
+        var selectedRange = selection.getRangeAt(0);
+        if(rangeContains( editBoxRange, selectedRange) ) {
+          getElementsInRange(selectedRange,&quot;span&quot;).forEach((el) =&gt; {
+            el.classList.add(&quot;funky&quot;);
+          });
+        }
+      }
+    }
+  }
+});
+
+function getElementsInRange(range, wrapNodeName) {
+  var elements = [];
+  var wrapper = document.createElement(wrapNodeName);
+  range.surroundContents(wrapper);
+  elements.push(wrapper);
+  return elements;
+}
+
+function rangeContains(outer, inner) {
+  return outer.compareBoundaryPoints(Range.START_TO_START,inner) &lt;= 0 &amp;&amp;
+    outer.compareBoundaryPoints(Range.END_TO_END,inner) &gt;= 0;
+}
+
+</code></pre>
+<p><span line-highlight='42-44,49,53,67-70,only'></span></p>
+<h2>Make the Funky button work when selecting multiple nodes</h2>
+<h3>The problem</h3>
+<p>In this section, we will make the <code>Funky</code> button work even if text is selected
+across multiple nodes.</p>
+<p><strong>NOTE: This is hard!</strong></p>
+<h3>What you need to know</h3>
+<p>On a high-level, we are going to edit <code>getElementsInRange</code> to work with
+ranges that span multiple nodes by:</p>
+<ol>
+<li>Detect if the range spans multiple nodes.</li>
+<li>If the range does span multiple nodes, we will walk the DOM between the
+range's start position and end position by:
+<ol>
+<li>From the range's start position, collect all <code>nextSibling</code>s.  Once out of siblings move
+to the <code>parentNode</code>.  Do not collect that node, continue collecting siblings
+and moving to parent nodes until you reach a <strong>parent node</strong> that is a direct descendent of the<br />
+<code>commonAncestor</code> of the start and end of the range.  This <strong>parent node</strong> is the
+<em>start-line node</em>.</li>
+<li>From the range's end position, collect all <code>previousSibling</code>s. Once out of siblings move
+to the <code>parentNode</code>.  Do not collect that node, continue collecting siblings
+and moving to parent nodes until you reach a <strong>parent node</strong> that is a direct descendent of the<br />
+<code>commonAncestor</code> of the start and end of the range. This <strong>parent node</strong> is the
+<em>end-line node</em>.</li>
+<li>Collect all sibling nodes between the <em>start-line node</em> and <em>end-line node</em>.</li>
+<li>Do not collect TextNodes that only have spaces.</li>
+<li>When <code>TextNodes</code> that have characters should be collected, wrap them in an element
+node of type <code>wrapNodeName</code>.</li>
+</ol></li>
+</ol>
+<p>Lets see how this works with an example.  Lets say we've selected from the <code>out</code> in <em>about</em> to
+the start of <code>brate</code> in <em>Celebrate</em>.  We've marked the selection start and end with <code>|</code> below:</p>
+<pre><code>&lt;div&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Learn &lt;b&gt;ab|out&lt;/b&gt; CanJS.&lt;/li&gt;
+    &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+    &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+    &lt;li&gt;Get Funky.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+&lt;div&gt;Get Ready To&lt;/div&gt;
+&lt;div&gt;Cele|brate!&lt;/div&gt;
+</code></pre>
+<p>So we first need to &quot;collect&quot; <code>out</code> in <code>elements</code>.  To do this we will do step <code>#2.5</code> and
+the DOM will look like:</p>
+<pre><code>&lt;div&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Learn &lt;b&gt;ab&lt;span class='funky'&gt;out&lt;/span&gt;&lt;/b&gt; CanJS.&lt;/li&gt;
+    &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+    &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+    &lt;li&gt;Get Funky.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+&lt;div&gt;Get Ready To&lt;/div&gt;
+&lt;div&gt;Cele|brate!&lt;/div&gt;
+</code></pre>
+<p>We will then keep doing step <code>#2.1</code>. This new span has no <code>nextSibling</code>s, so we will
+walk up to it's parent <code>&lt;b&gt;</code> element and collect its next siblings.  This will update the DOM to:</p>
+<pre><code>&lt;div&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Learn &lt;b&gt;ab&lt;span class='funky'&gt;out&lt;/span&gt;&lt;/b&gt;&lt;span class='funky'&gt; CanJS.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+    &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+    &lt;li&gt;Get Funky.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+&lt;div&gt;Get Ready To&lt;/div&gt;
+&lt;div&gt;Cele|brate!&lt;/div&gt;
+</code></pre>
+<p>We will then keep doing step <code>#2.1</code>. This new span has no <code>nextSibling</code>s, so we will
+walk up to it's parent <code>&lt;li&gt;</code> element and collect its next siblings.  We will only collect
+Elements and TextNodes with characters, resulting in:</p>
+<pre><code>&lt;div&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Learn &lt;b&gt;ab&lt;span class='funky'&gt;out&lt;/span&gt;&lt;/b&gt;&lt;span class='funky'&gt; CanJS.&lt;/span&gt;&lt;/li&gt;
+    &lt;li class='funky'&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+    &lt;li class='funky'&gt;Learn about selection and ranges.&lt;/li&gt;
+    &lt;li class='funky'&gt;Get Funky.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+&lt;div&gt;Get Ready To&lt;/div&gt;
+&lt;div&gt;Cele|brate!&lt;/div&gt;
+</code></pre>
+<p>We will then keep doing step <code>#2.1</code>, moving onto the <code>&lt;ol&gt;</code>:</p>
+<pre><code>&lt;div&gt;
+  &lt;ol class='funky'&gt;
+    &lt;li&gt;Learn &lt;b&gt;ab&lt;span class='funky'&gt;out&lt;/span&gt;&lt;/b&gt;&lt;span class='funky'&gt; CanJS.&lt;/span&gt;&lt;/li&gt;
+    &lt;li class='funky'&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+    &lt;li class='funky'&gt;Learn about selection and ranges.&lt;/li&gt;
+    &lt;li class='funky'&gt;Get Funky.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+&lt;div&gt;Get Ready To&lt;/div&gt;
+&lt;div&gt;Cele|brate!&lt;/div&gt;
+</code></pre>
+<p>Once we reach the <code>&lt;div&gt;</code> containing the <code>&lt;ol&gt;</code>, we've reached
+the <em>start-line node</em>.  Now we will move onto step <code>#2.2</code>.  We will perform a similar walk from
+the end of the range, but in reverse. In this case, we will wrap <code>Cele</code> with a <code>&lt;span&gt;</code> follows:</p>
+<pre><code>&lt;div&gt;
+  &lt;ol class='funky'&gt;
+    &lt;li&gt;Learn &lt;b&gt;ab&lt;span class='funky'&gt;out&lt;/span&gt;&lt;/b&gt;&lt;span class='funky'&gt; CanJS.&lt;/span&gt;&lt;/li&gt;
+    &lt;li class='funky'&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+    &lt;li class='funky'&gt;Learn about selection and ranges.&lt;/li&gt;
+    &lt;li class='funky'&gt;Get Funky.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+&lt;div&gt;Get Ready To&lt;/div&gt;
+&lt;div&gt;&lt;span class='funky'&gt;Cele&lt;/span&gt;|brate!&lt;/div&gt;
+</code></pre>
+<p>As this <code>&lt;span&gt;</code> has no previous siblings, we will walk up to its container <code>div</code>. We've now
+reached the <em>end-line node</em>.</p>
+<p>Finally, we move onto step <code>#2.3</code>, and collect all nodes between <em>start-line</em> and <em>end-line</em>:</p>
+<pre><code>&lt;div&gt;
+  &lt;ol class='funky'&gt;
+    &lt;li&gt;Learn &lt;b&gt;ab&lt;span class='funky'&gt;out&lt;/span&gt;&lt;/b&gt;&lt;span class='funky'&gt; CanJS.&lt;/span&gt;&lt;/li&gt;
+    &lt;li class='funky'&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+    &lt;li class='funky'&gt;Learn about selection and ranges.&lt;/li&gt;
+    &lt;li class='funky'&gt;Get Funky.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class='funky'&gt;Get Ready To&lt;/div&gt;
+&lt;div&gt;&lt;span class='funky'&gt;Cele&lt;/span&gt;|brate!&lt;/div&gt;
+</code></pre>
+<blockquote>
+<p>NOTE: In the final solution, elements are first collected all at once,
+and then <code>class='funky'</code> is added later. However, we are showing <code>funky</code> being added
+incrementally here for clarity.</p>
+</blockquote>
+<p><strong>Helpers:</strong></p>
+<p>To make the solution easier, we've provided several helpers in the <code>HTML</code> tab:</p>
+<p><code>splitRangeStart</code> takes a range and splits the text node at the range start and<br />
+replaces the selected part with an element.  For example, if the range selected
+<em>&quot;a small&quot;</em> in the following HTML:</p>
+<pre><code>&lt;i&gt;It's a&lt;/i&gt;&lt;b&gt;small world&lt;b&gt;
+</code></pre>
+<p>Calling <code>splitRangeStart(range, &quot;span&quot;)</code> would update the DOM to:</p>
+<pre><code>&lt;i&gt;It's &lt;span&gt;a&lt;/span&gt;&lt;/i&gt;&lt;b&gt;small world&lt;b&gt;
+</code></pre>
+<p>And it would return the wrapping <code>&lt;span&gt;</code>.</p>
+<p><code>splitRangeEnd</code> does the same thing, but in reverse.</p>
+<p><code>siblingThenParentUntil</code> is used to walk the DOM in the pattern described in
+<code>#2.1</code> and <code>#2.2</code>. For example, with DOM like:</p>
+<pre><code>&lt;div class='editbox' contenteditable=&quot;true&quot;&gt;
+  &lt;div&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Learn &lt;b&gt;ab&lt;span id='START'&gt;out&lt;/span&gt;&lt;/b&gt; CanJS.&lt;/li&gt;
+      &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+      &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+      &lt;li&gt;Get Funky.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+  &lt;div&gt;Get Ready To&lt;/div&gt;
+  &lt;div&gt;Cele|brate!&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Calling it as follows:</p>
+<pre><code class="language-js">var start = document.querySelector(&quot;#start&quot;),
+    editbox = document.querySelector('.editbox')
+siblingThenParentUntil(&quot;nextSibling&quot;, start, editbox, function handler(element){})
+</code></pre>
+<p>Will callback <code>handler</code> with all the TextNodes and Elements that should be either
+wrapped and collected or simply collected.  That is, it would be called with:</p>
+<pre><code>TextNode&lt; CanJS.&gt;
+&lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+&lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+&lt;li&gt;Get Funky.&lt;/li&gt;
+&lt;ol&gt;...
+</code></pre>
+<p><code>siblingThenParentUntil</code> will return the parent <code>&lt;div&gt;</code> of the <code>&lt;ol&gt;</code> as the <em>start-line</em> node.</p>
+<p><strong>Other stuff you need to know:</strong></p>
+<ul>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Range/commonAncestorContainer">range.commonAncestor</a> returns
+the DOM node that contains both the start and end of a <code>Range</code>.</p></li>
+<li><p><code>nextSibling</code> returns a node's next sibling in the DOM.</p></li>
+<li><p><code>previousSibling</code> returns a node's previous sibling in the DOM.</p></li>
+<li><p><code>parentNode</code> returns a node's parent element.</p></li>
+<li><p>If you change the DOM, ranges, including the selected ranges, can be messed up.  Use
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Range/setStart">range.setStart</a> and
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Range/setEnd">range.setEnd</a> to
+update the start and end of a range after the DOM has finished changing:</p>
+<pre><code class="language-js">range.setStart(startWrap,0);
+range.setEnd(endWrap.firstChild,endWrap.textContent.length);
+</code></pre></li>
+<li><p>Use <code>/[^\s\n]/.test(textNode.nodeValue)</code> to test if a TextNode has non-space characters.</p></li>
+</ul>
+<p><strong>Some final clues:</strong></p>
+<p>The following can be used to collect (and possibly wrap) nodes into the <code>elements</code> array:</p>
+<pre><code class="language-js">function addSiblingElement(element) {
+  // We are going to wrap all text nodes with a span.
+  if(element.nodeType === Node.TEXT_NODE) {
+    // If there's something other than a space:
+    if(/[^\s\n]/.test(element.nodeValue)) {
+      var span = document.createElement(wrapNodeName);
+      element.parentNode.insertBefore(span, element);
+      span.appendChild(element);
+      elements.push(span);
+    }
+  } else {
+    elements.push(element)
+  }
+
+}
+</code></pre>
+<p>With this, you could do step <code>#2.1</code> like:</p>
+<pre><code class="language-js">var startWrap = splitRangeStart(range, wrapNodeName);
+addSiblingElement(startWrap);
+
+// Add nested siblings from startWrap up to the first line.
+var startLine = siblingThenParentUntil(
+    &quot;nextSibling&quot;,
+    startWrap,
+    range.commonAncestor,
+    addSiblingElement);
+</code></pre>
+<h3>The solution</h3>
+<p>Update the <strong>JavaScript</strong> tab to:</p>
+<pre><code class="language-js">can.Component.extend({
+  tag: 'rich-text-editor',
+  view: `
+    &lt;div class='controls'&gt;
+      &lt;button on:click='exec(&quot;bold&quot;)' class='bold'&gt;B&lt;/button&gt;
+      &lt;button on:click='exec(&quot;italic&quot;)' class='italic'&gt;I&lt;/button&gt;
+      &lt;button on:click='copyAll()'&gt;Copy All&lt;/button&gt;
+      &lt;button on:click='funky()' class='funky'&gt;Funky&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class='editbox' contenteditable=&quot;true&quot;&gt;
+      &lt;div&gt;
+        &lt;ol&gt;
+          &lt;li&gt;Learn &lt;b&gt;about&lt;/b&gt; CanJS.&lt;/li&gt;
+          &lt;li&gt;Learn &lt;i&gt;execCommand&lt;/i&gt;.&lt;/li&gt;
+          &lt;li&gt;Learn about selection and ranges.&lt;/li&gt;
+          &lt;li&gt;Get Funky.&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/div&gt;
+      &lt;div&gt;Celebrate!&lt;/div&gt;
+    &lt;/div&gt;
+  `,
+  ViewModel: {
+    exec(cmd){
+      document.execCommand(cmd, false, false);
+    },
+    element: &quot;any&quot;,
+    connectedCallback(el) {
+      this.element = el;
+    },
+    copyAll(){
+      var editBox = this.element.querySelector('.editbox'),
+          editBoxRange = document.createRange();
+      editBoxRange.selectNodeContents(editBox);
+
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(editBoxRange);
+
+      document.execCommand(&quot;copy&quot;);
+    },
+    funky() {
+      var editBox = this.element.querySelector('.editbox'),
+          editBoxRange = document.createRange();
+      editBoxRange.selectNodeContents(editBox);
+
+      var selection = window.getSelection();
+      if(selection &amp;&amp; selection.rangeCount) {
+        var selectedRange = selection.getRangeAt(0);
+        if(rangeContains( editBoxRange, selectedRange) ) {
+          getElementsInRange(selectedRange,&quot;span&quot;).forEach((el) =&gt; {
+            el.classList.add(&quot;funky&quot;);
+          });
+        }
+      }
+    }
+  }
+});
+
+function getElementsInRange(range, wrapNodeName) {
+  var elements = [];
+
+  function addSiblingElement(element) {
+    // We are going to wrap all text nodes with a span.
+    if(element.nodeType === Node.TEXT_NODE) {
+      // If there's something other than a space:
+      if(/[^\s\n]/.test(element.nodeValue)) {
+        var span = document.createElement(wrapNodeName);
+        element.parentNode.insertBefore(span, element);
+        span.appendChild(element);
+        elements.push(span);
+      }
+    } else {
+      elements.push(element)
+    }
+
+  }
+
+  var startContainer = range.startContainer,
+      endContainer = range.endContainer,
+      commonAncestor = range.commonAncestorContainer;
+
+  if(startContainer === commonAncestor) {
+    var wrapper = document.createElement(wrapNodeName);
+    range.surroundContents(wrapper);
+    elements.push(wrapper);
+  } else {
+    // Split the starting text node.
+    var startWrap = splitRangeStart(range, wrapNodeName);
+    addSiblingElement(startWrap);
+
+    // Add nested siblings from startWrap up to the first line.
+    var startLine = siblingThenParentUntil(
+        &quot;nextSibling&quot;,
+        startWrap,
+        commonAncestor,
+        addSiblingElement);
+
+    // Split the ending text node.
+    var endWrap = splitRangeEnd(range, wrapNodeName);
+    addSiblingElement(endWrap);
+
+    // Add nested siblings from endWrap up to the last line.
+    var endLine = siblingThenParentUntil(
+        &quot;previousSibling&quot;,
+        endWrap,
+        commonAncestor,
+        addSiblingElement);
+
+    // Add lines between start and end to elements.
+    var cur = startLine.nextSibling;
+    while(cur !== endLine) {
+      addSiblingElement(cur);
+      cur = cur.nextSibling;
+    }
+
+    // Update the ranges
+    range.setStart(startWrap,0);
+    range.setEnd(endWrap.firstChild,endWrap.textContent.length);
+  }
+
+  return elements;
+}
+
+function rangeContains(outer, inner) {
+  return outer.compareBoundaryPoints(Range.START_TO_START,inner) &lt;= 0 &amp;&amp;
+    outer.compareBoundaryPoints(Range.END_TO_END,inner) &gt;= 0;
+}
+
+</code></pre>
+<p><span line-highlight='62-82,86-119,only'></span></p>
+<script src="//static.jsbin.com/js/embed.min.js?4.0.4"></script>
+
+</section>
+
+  
+
+
+<script type="text/javascript">
+  window.docObject = {"src":{"path":"docs/can-guides/commitment/recipes/text-editor/text-editor.md"},"description":"This guide walks you through building a basic rich text editor.\n\n\n","name":"guides/recipes/text-editor","title":"Text Editor (Medium)","type":"page","parent":"guides/recipes","comment":" ","pathToRoot":"../../.."};
+</script>
+</article>
+      
+        <footer><p>CanJS is part of <a href="https://donejs.com" target="_blank">DoneJS</a>. Created and maintained by the core <a href="https://donejs.com/About.html#team" target="_blank">DoneJS team</a> and <a href="https://www.bitovi.com" target="_blank">Bitovi</a>. <strong>Currently 4.0.1.</strong></p>
+</footer>
+      
+    </div>
+  </div>
+</div>
+<survey-ad>
+  <button aria-label="Close" class="close" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <a href="https://donejs.com/survey.html" target="_blank">
+    Help us improve CanJS by taking our community survey
+  </a>
+</survey-ad>
+
+
+		
+			<script>
+				steal = {
+				  	instantiated: {
+				    	"bundles/bit-docs-site/static.css!$css" : null
+				  	}
+			  	};
+			</script>
+			<script type='text/javascript' data-main="bit-docs-site/static" src="../../static/steal.production.js"></script>
+		
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+		<!-- root-level elements with attributes necessary for the app -->
+		<div path-prefix="../.."></div>
+
+	</body>
+</html>
